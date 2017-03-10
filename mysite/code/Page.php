@@ -26,6 +26,7 @@ class Page_Controller extends ContentController {
 	 * @var array
 	 */
 	private static $allowed_actions = array (
+	    'QueryDictionary'
 	);
 
 	public function init() {
@@ -42,11 +43,16 @@ class Page_Controller extends ContentController {
 				TextField::create('Word', '')
 			),
 			FieldList::create(
-				FormAction::create('handleDictionary', 'Query Dictionary')
+				FormAction::create('doHandleDictionary', 'Query Dictionary')
 			),
 			RequiredFields::create('Word')
 		);
 		return $form;
 	}
+
+	public function doHandleDictionary($data, Form $form) {
+	    //$form->sessionMessage("Wow!", "good");
+	    return $this->redirectBack();
+    }
 
 }
