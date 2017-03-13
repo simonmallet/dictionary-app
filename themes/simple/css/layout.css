@@ -843,7 +843,7 @@ body h1 span.amp {
 }
 
 .word-result {
-	display:block;
+	display:none;
 	margin-left: 450px;
 	margin-top: 83px;
 	position: absolute;
