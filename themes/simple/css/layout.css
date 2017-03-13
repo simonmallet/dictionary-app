@@ -843,7 +843,7 @@ body h1 span.amp {
 }
 
 .word-result {
-	display:none;
+	display:block;
 	margin-left: 450px;
 	margin-top: 83px;
 	position: absolute;
@@ -860,4 +860,31 @@ body h1 span.amp {
 
 .word-result .word-definition {
 	padding-left: 45px;
+}
+
+.word-result .stats {
+	margin-left: 300px;
+	position: absolute;
+	font-weight: bold;
+	font-size: 20px;
+	margin-top: -53px;
+	width: 400px;
+}
+
+.word-result .stats .stats-words {
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.loading-word-results {
+	display: none;
+	position:absolute;
+	margin-left: 652px;
+	margin-top: 175px;
+}
+
+.loading-word-results .loading-title {
+	margin-left: 73px;
+	font-size: 20px;
+	margin-bottom: 5px;
 }
