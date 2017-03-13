@@ -1,4 +1,4 @@
-jQuery.noConflict();
+	jQuery.noConflict();
 
 (function($) {
 	$(document).ready(function() {
@@ -83,5 +83,40 @@ jQuery.noConflict();
 				menu.slideToggle(200);
 			});
 		}
+
+		// Ajax call for query dictionary
+		$('#Form_QueryDictionary_action_doHandleDictionary').click(function (e) {
+			e.preventDefault();
+
+            var url = "http://dictionary-service.simonmallet.com/public/infos/" + $('#Form_QueryDictionary_Word').val();
+
+            // resetting results
+			$('#word-result').hide();
+            $('#word-results-words').html('');
+
+            $.ajax({
+            	type: "GET",
+				url: url
+            	})
+                .done(function (response) {
+                    $('#word-result').show();
+                	console.log('success');
+                	console.log(response);
+
+                	if (response[0] == "No record found.") {
+                        $('#word-results-words').html('Whoops! Looks like that word does not exist in this dictionary.');
+                		return;
+					}
+
+					response.wordDefinitions.forEach(function(word) {
+						$('#word-results-words').append('<div class=word-type>' + word.wordtype + '</div><div class="word-definition">' + word.definition + '</div>');
+					});
+					console.log(response.statistics);
+                })
+                .fail(function (xhr) {
+                	console.log('failure');
+					console.log(xhr);
+                });
+		});
 	});
 }(jQuery));

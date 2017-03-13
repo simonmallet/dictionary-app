@@ -841,3 +841,23 @@ body h1 span.amp {
 	    display: none;
 	}
 }
+
+.word-result {
+	display:none;
+	margin-left: 450px;
+	margin-top: 83px;
+	position: absolute;
+}
+.word-result .title {
+	font-size: 20px;
+	font-weight: bold;
+	padding-bottom: 15px;
+}
+
+.word-result .word-type {
+	float: left;
+}
+
+.word-result .word-definition {
+	padding-left: 45px;
+}

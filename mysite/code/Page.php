@@ -41,6 +41,7 @@ class Page_Controller extends ContentController {
 			__FUNCTION__,
 			FieldList::create(
 				TextField::create('Word', '')
+                ->setAttribute('placeholder', 'Write down a word you like')
 			),
 			FieldList::create(
 				FormAction::create('doHandleDictionary', 'Query Dictionary')
@@ -49,10 +50,4 @@ class Page_Controller extends ContentController {
 		);
 		return $form;
 	}
-
-	public function doHandleDictionary($data, Form $form) {
-	    //$form->sessionMessage("Wow!", "good");
-	    return $this->redirectBack();
-    }
-
 }
