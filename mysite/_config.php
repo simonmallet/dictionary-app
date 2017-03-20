@@ -6,10 +6,10 @@ $project = 'mysite';
 global $databaseConfig;
 $databaseConfig = array(
 	'type' => 'MySQLDatabase',
-	'server' => '127.0.0.1',
+	'server' => 'mariadb',
 	'username' => 'root',
-	'password' => '',
-	'database' => 'SS_dictionary',
+	'password' => 'root',
+	'database' => 'simon_dictionary_ss',
 	'path' => ''
 );
 
